@@ -15,13 +15,28 @@
       $voornaam = "Arjan";
       $adres = "Prins Hendrikstraat 17";
       $leeftijd = 49;
-      $fruit = "Appel";
+      $fruit0 = "Sinaasappel";
+      $fruit1 = "Mango";
+      $fruit2 = "Bosbessen";
+
+      $fruit = array("Banaan", "Perzik", "Appel", "Aardbei");
+
       echo "<b>Mijn voornaam is:</b> " . $voornaam . "<br>";
       echo "<b>Mijn adres is:</b> " . $adres . "<br>";
-      echo "Mijn leeftijd is: " . $leeftijd;
-      
+      echo "Mijn leeftijd is: " . $leeftijd . "<br>";
+      echo "Mijn favoriete fruit nr 1 is: " . $fruit0 . "<br>";
+      echo "Mijn favoriete fruit nr 2 is: " . $fruit1 . "<br>";
+      echo "Mijn favoriete fruit nr 3 is: " . $fruit2 . "<br>";
+      echo "Dit stukje fruit staat in een array: " . $fruit[0]. "<br>";
+      echo "Dit stukje fruit staat ook in het array: " . $fruit[1]. "<br>";
+      echo "Dit stukje fruit staat ook in het array: " . $fruit[2]. "<br>";
+      echo "Dit stukje fruit staat ook in het array: " . $fruit[3]. "<br>";
 
       echo "<hr>";
+
+      for ($i = 0; $i < count($fruit); $i++) {
+        echo "Dit fruit zit in het array: " . $fruit[$i] . "<br>";
+      }
 
 
     ?>
