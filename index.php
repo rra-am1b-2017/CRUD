@@ -12,6 +12,7 @@
   <body>
     
     <?php
+      
       $voornaam = "Arjan";
       $adres = "Prins Hendrikstraat 17";
       $leeftijd = 49;
@@ -19,7 +20,7 @@
       $fruit1 = "Mango";
       $fruit2 = "Bosbessen";
 
-      $fruit = array("Banaan", "Perzik", "Appel", "Aardbei");
+      $fruit = array("Aardbei", "Banaan", "Perzik", "Appel");
 
       echo "<b>Mijn voornaam is:</b> " . $voornaam . "<br>";
       echo "<b>Mijn adres is:</b> " . $adres . "<br>";
@@ -34,12 +35,62 @@
 
       echo "<hr>";
 
-      for ($i = 0; $i < count($fruit); $i++) {
-        echo "Dit fruit zit in het array: " . $fruit[$i] . "<br>";
-      }
+      /*  Opdracht: Zet de volgende gegevens in een array:
+        voornaam, tussenvoegsel, achternaam, straatnaam, postcode, woonplaats, leeftijd, schoenmaat, haarkleur. 
+        Echo deze gegevens in  een goed lopende zin naar het scherm.
+      */
 
+      // Dit is de eerste comment methode. Hij geldt voor een regel
 
+      /*
+         De tweede comment methode 
+         commentarieerd meerdere regels uit.
+      */
+
+      # Dit is de derde methode om uit te commentarieren
+
+      // Dit is een indexed array
+      $user = array("Arjan", "de", "Ruijter", "Prins Hendrikstraat", "17", "1901 CB", "Castricum", 49, 45, "grijs");
+      
+      // Dit is een associatief array
+      $user1 = array("voornaam"      => "Bert",
+                    "tussenvoegsel" => "de",
+                    "achternaam"    => "Vries",
+                    "straatnaam"    => "Jan Willem Prinsstraat",
+                    "huisnummer"    => "34",
+                    "postcode"      => "1051 XM",
+                    "woonplaats"    => "Heiloo", 
+                    "leeftijd"      => 84,
+                    "schoenmaat"    => 35, 
+                    "haarkleur"     => "grijs");
+
+      // var_dump($user1);
+
+      echo "Mijn naam is: " . $user[0] . " " . $user[1] . " " . $user[2] . "<br>";
+      echo "De straat waar ik woon: " . $user[3] . " " . $user[4] ."<br>";
+
+      echo "<hr>";
+      echo "Mijn naam is: " . $user1["voornaam"] . " " . $user1["tussenvoegsel"] . " " . $user1["achternaam"] . "<br>";
+      echo "De straat waar ik woon: " . $user1["straatnaam"] . " " . $user1["huisnummer"] ."<br>";
     ?>
+
+
+    <?php 
+      var_dump($_POST);
+      echo "Mijn naam is: " . $_POST["voornaam"];
+    ?>
+    <hr>
+    <h3>Vul hieronder je gegevens in:</h3>
+    <form method="post">
+      voornaam: <input type="text" name="voornaam">
+      <!-- Maak twee nieuwe input-tags van het type="text" 
+           tussenvoegsel en voornaam. Geef deze weer in de echo op regel 80 -->
+
+      wachtwoord: <input type="password" name="wachtwoord">
+      <input type="submit" value="Drukken maar!">
+    </form>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
