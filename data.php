@@ -3,6 +3,8 @@
   echo "Mijn voornaam is: " . $_POST["voornaam"]. " " .
   $_POST["tussenvoegsel"] . " " .
   $_POST["achternaam"] . "<br>";
+  echo "Mijn leeftijd is: " . $_POST["leeftijd"] . "<br>";
+  echo "Mijn haarkleur is: " . $_POST["haarkleur"] . "<br>";
   echo "Mijn wachtwoord is: ". $_POST["wachtwoord"];
 
 

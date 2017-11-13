@@ -82,7 +82,12 @@
       voornaam: <input type="text" name="voornaam">
       tussenvoegsel: <input type="text" name="tussenvoegsel">
       achternaam: <input type="text" name="achternaam">
+      leeftijd: <input type="number" name="leeftijd" min="18" max="123">
       wachtwoord: <input type="password" name="wachtwoord">
+      Haarkleur: <select name="haarkleur">
+                    <option value="bruin">bruin haar</option>
+                    <option value="blond">blond haar</option>
+                 </select>
       <input type="submit" value="Drukken maar!">
     </form>
 
