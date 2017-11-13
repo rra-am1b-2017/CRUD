@@ -75,17 +75,13 @@
     ?>
 
 
-    <?php 
-      var_dump($_POST);
-      echo "Mijn naam is: " . $_POST["voornaam"];
-    ?>
+    
     <hr>
     <h3>Vul hieronder je gegevens in:</h3>
-    <form method="post">
+    <form method="post" action="./data.php">
       voornaam: <input type="text" name="voornaam">
-      <!-- Maak twee nieuwe input-tags van het type="text" 
-           tussenvoegsel en voornaam. Geef deze weer in de echo op regel 80 -->
-
+      tussenvoegsel: <input type="text" name="tussenvoegsel">
+      achternaam: <input type="text" name="achternaam">
       wachtwoord: <input type="password" name="wachtwoord">
       <input type="submit" value="Drukken maar!">
     </form>
