@@ -57,7 +57,7 @@
           <?php
             while ( $record = mysqli_fetch_assoc($result)) {
                 echo "<tr>
-                        <th>{$record["id"]}</th>
+                        <th>" . $record["id"] . "</th>
                         <td>{$record["voornaam"]}</td>
                         <td>{$record["tussenvoegsel"]}</td>
                         <td>{$record["achternaam"]}</td>
