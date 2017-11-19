@@ -6,11 +6,45 @@
   echo "Mijn leeftijd is: " . $_POST["leeftijd"] . "<br>";
   echo "Mijn haarkleur is: " . $_POST["haarkleur"] . "<br>";
   echo "Mijn wachtwoord is: ". $_POST["wachtwoord"];
-
+  echo "<hr>";
 
   // Met onderstaande code kun je direct teruggaan naar een pagina
   //header("location: ./index.php");
+  $server_name = "localhost";
+  $user_name = "root";
+  $password = "";
+  $database_name = "am1b_2017_blok2_crud";
 
+  // Met myqli_connect maken we contact met onze mysql-server.
+  $conn = mysqli_connect($server_name, $user_name, $password, $database_name);
+
+  /* $sql = "INSERT INTO `users` (`id`,
+                             `voornaam`, 
+                             `tussenvoegsel`, 
+                             `achternaam`) 
+              VALUES        (NULL, 
+                             '". $_POST['voornaam']   ."', 
+                             '". $_POST['tussenvoegsel']."', 
+                             '" . $_POST["achternaam"] ."')"; */
+
+  $test = "Dit is {$_POST['voornaam']} een test";
+  echo $test;
+
+  $sql = "INSERT INTO `users`  (`id`,
+                                `voornaam`, 
+                                `tussenvoegsel`, 
+                                `achternaam`) 
+                  VALUES        (NULL, 
+                                '{$_POST["voornaam"]}', 
+                                '{$_POST['tussenvoegsel']}', 
+                                '{$_POST["achternaam"]}')";
+
+  echo $sql;
+
+  mysqli_query($conn, $sql);
+
+
+  
   // Met deze code kun je even blijven op de pagina en dan teruggaan
-  header("refresh:3; url=./index.php");
+  header("refresh:150; url=./index.php");
 ?>
