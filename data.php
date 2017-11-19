@@ -27,8 +27,8 @@
                              '". $_POST['tussenvoegsel']."', 
                              '" . $_POST["achternaam"] ."')"; */
 
-  $test = "Dit is {$_POST['voornaam']} een test";
-  echo $test;
+ /*  $test = "Dit is {$_POST['voornaam']} een test";
+  echo $test; */
 
   $sql = "INSERT INTO `users`  (`id`,
                                 `voornaam`, 
