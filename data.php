@@ -46,5 +46,5 @@
 
   
   // Met deze code kun je even blijven op de pagina en dan teruggaan
-  header("refresh:150; url=./index.php");
+  header("refresh:3; url=./index.php");
 ?>
