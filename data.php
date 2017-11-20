@@ -1,15 +1,16 @@
 <?php
-  var_dump($_POST); 
-  echo "Mijn voornaam is: " . $_POST["voornaam"]. " " .
-  $_POST["tussenvoegsel"] . " " .
-  $_POST["achternaam"] . "<br>";
-  echo "Mijn leeftijd is: " . $_POST["leeftijd"] . "<br>";
-  echo "Mijn haarkleur is: " . $_POST["haarkleur"] . "<br>";
-  echo "Mijn wachtwoord is: ". $_POST["wachtwoord"];
-  echo "<hr>";
+  // var_dump($_POST); 
+  // echo "Mijn voornaam is: " . $_POST["voornaam"]. " " .
+  // $_POST["tussenvoegsel"] . " " .
+  // $_POST["achternaam"] . "<br>";
+  // echo "Mijn leeftijd is: " . $_POST["leeftijd"] . "<br>";
+  // echo "Mijn haarkleur is: " . $_POST["haarkleur"] . "<br>";
+  // echo "Mijn wachtwoord is: ". $_POST["wachtwoord"];
+  // echo "<hr>";
 
   // Met onderstaande code kun je direct teruggaan naar een pagina
   //header("location: ./index.php");
+
   $server_name = "localhost";
   $user_name = "root";
   $password = "";
@@ -39,9 +40,13 @@
                                 '{$_POST['tussenvoegsel']}', 
                                 '{$_POST["achternaam"]}')";
 
-  echo $sql;
+  //echo $sql;
+  echo "De gegevens zijn goed weggeschreven naar de database";
 
   mysqli_query($conn, $sql);
+
+  // Hiermee wordt de verbinding verbroken.
+  mysqli_close($conn);
 
 
   
