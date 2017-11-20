@@ -9,8 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
-  <body>
-    
+  <body>   
     <?php
       
       // $voornaam = "Arjan";
@@ -74,6 +73,39 @@
       // echo "De straat waar ik woon: " . $user1["straatnaam"] . " " . $user1["huisnummer"] ."<br>";
     ?>
 
+    <?php
+      $server_name = "localhost";
+      $user_name = "root";
+      $password = "";
+      $database_name = "am1b_2017_blok2_crud";
+    
+      // Met myqli_connect maken we contact met onze mysql-server.
+      $conn = mysqli_connect($server_name, $user_name, $password, $database_name);
+
+      // Met deze query selecteren we de records uit de tabel users
+      $sql = "SELECT * FROM `users`";
+    
+      // We vuren de query af op de database en krijgen het resultaat van deze select query terug
+      $result = mysqli_query($conn, $sql);
+
+      //var_dump($result);
+      // Maak van $result een assiatief array zodat we het kunnen gebruiken in de code
+      //$records = mysqli_fetch_assoc($result);
+
+      //var_dump($records);
+
+      // $i = 0;
+      // while ($i <= 5) {
+      //   echo $i . "<br>";
+      //   $i = $i + 2;
+      // }
+
+      
+      while ($records = mysqli_fetch_assoc($result)) {
+        var_dump($records);
+      }
+    ?>
+
     <h3>Vul hieronder je gegevens in:</h3>
     <form method="post" action="./data.php">
       voornaam: <input type="text" name="voornaam"><br>
@@ -84,11 +116,38 @@
       Haarkleur: <select name="haarkleur"><br>
                     <option value="bruin">bruin haar</option>
                     <option value="blond">blond haar</option>
-                 </select>
+                 </select><br>
       <input type="submit" value="Drukken maar!"><br>
     </form>
 
+    <hr>
 
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Voornaam</th>
+          <th>tussenvoegsel</th>
+          <th>Achternaam</th>
+        </tr> 
+      </thead>
+      <tbody>
+        <tr>
+          <td>Arjan</td>
+          <td>de</td>
+          <td>Ruijter</td>
+        </tr> 
+        <tr>
+          <td>Bas</td>
+          <td>de</td>
+          <td>Bakker</td>
+        </tr>
+        <tr>
+          <td>Johan</td>
+          <td>van</td>
+          <td>Emmen</td>
+        </tr>
+      </tbody>    
+    </table>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
