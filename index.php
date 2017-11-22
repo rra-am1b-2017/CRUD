@@ -97,13 +97,22 @@
       // $i = 0;
       // while ($i <= 5) {
       //   echo $i . "<br>";
-      //   $i = $i + 2;
+      //   $i = $i + 1;
       // }
 
-      
+      $table_content = "";
       while ($records = mysqli_fetch_assoc($result)) {
-        var_dump($records);
+        //var_dump($records);
+        $table_content  = $table_content . "<tr>
+                                              <td>" . $records["id"] . "</td>
+                                              <td>" . $records["voornaam"] . "</td>
+                                              <td>" . $records["tussenvoegsel"] . "</td>
+                                              <td>" . $records["achternaam"] . "</td>
+                                              <td>" . $records["leeftijd"] . "</td>
+                                            </tr>";
       }
+
+      
     ?>
 
     <h3>Vul hieronder je gegevens in:</h3>
@@ -125,27 +134,15 @@
     <table class="table table-hover">
       <thead>
         <tr>
+          <th>id</th>
           <th>Voornaam</th>
           <th>tussenvoegsel</th>
           <th>Achternaam</th>
+          <th>Leeftijd</th>
         </tr> 
       </thead>
       <tbody>
-        <tr>
-          <td>Arjan</td>
-          <td>de</td>
-          <td>Ruijter</td>
-        </tr> 
-        <tr>
-          <td>Bas</td>
-          <td>de</td>
-          <td>Bakker</td>
-        </tr>
-        <tr>
-          <td>Johan</td>
-          <td>van</td>
-          <td>Emmen</td>
-        </tr>
+        <?php echo $table_content; ?>
       </tbody>    
     </table>
 

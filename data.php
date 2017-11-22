@@ -34,11 +34,13 @@
   $sql = "INSERT INTO `users`  (`id`,
                                 `voornaam`, 
                                 `tussenvoegsel`, 
-                                `achternaam`) 
+                                `achternaam`,
+                                `leeftijd`) 
                   VALUES        (NULL, 
                                 '{$_POST["voornaam"]}', 
                                 '{$_POST['tussenvoegsel']}', 
-                                '{$_POST["achternaam"]}')";
+                                '{$_POST["achternaam"]}',
+                                '{$_POST["leeftijd"]}')";
 
   //echo $sql;
   echo "De gegevens zijn goed weggeschreven naar de database";
