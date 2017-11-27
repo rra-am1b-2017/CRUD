@@ -53,5 +53,8 @@
 
   
   // Met deze code kun je even blijven op de pagina en dan teruggaan
-  header("refresh:4; url=./index.php");
+  // header("refresh:4; url=./index.php");
+
+  // Je wordt nu direct teruggestuurd naar index.php
+  header("Location: ./index.php");
 ?>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Hello, world!</title>
+    <title>CRUD met PHP!</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -110,11 +110,22 @@
                                               <td>" . $records["tussenvoegsel"] . "</td>
                                               <td>" . $records["achternaam"] . "</td>
                                               <td>" . $records["leeftijd"] . "</td>
+                                              <td>
+                                                <a href='./update.php'>
+                                                  <img src='./img/edit.png' alt='potlood-wijzig-record'>
+                                                </a>
+                                              </td>
+                                              <td>
+                                                <a href=''>
+                                                  <img src='./img/drop.png' alt='kruis-delete-record'>
+                                                </a>
+                                              </td>
                                             </tr>";
       }
 
       
     ?>
+    
 
     <h3>Vul hieronder je gegevens in:</h3>
     <form method="post" action="./data.php">
@@ -140,6 +151,8 @@
           <th>tussenvoegsel</th>
           <th>Achternaam</th>
           <th>Leeftijd</th>
+          <th></th>
+          <th></th>
         </tr> 
       </thead>
       <tbody>
