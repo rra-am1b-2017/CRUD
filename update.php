@@ -1,7 +1,32 @@
+<?php
+  //echo "Het meegegeven id=" . $_GET["id"];
+
+  // Maak contact met database
+  $server_name = "localhost";
+  $user_name = "root";
+  $password = "";
+  $database_name = "am1b_2017_blok2_crud";
+
+  // Met myqli_connect maken we contact met onze mysql-server.
+  $conn = mysqli_connect($server_name, $user_name, $password, $database_name);
+
+  // Met deze query selecteren we de records uit de tabel users
+  $sql = "SELECT * FROM `users` WHERE `id` = " . $_GET["id"];
+
+  // We vuren de query af op de database en krijgen het resultaat van deze select query terug
+  $result = mysqli_query($conn, $sql);
+
+  //var_dump($result);
+  // Maak van $result een assiatief array zodat we het kunnen gebruiken in de code
+  $record = mysqli_fetch_assoc($result);
+
+  //var_dump($record);
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Hello, world!</title>
+    <title>CRUD met PHP!</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,28 +37,38 @@
   <body>
     
   <div class="container">
-    <h3>Wijzig hieronder je gegevens in:</h3>
+    <h3>Wijzig hieronder je gegevens:</h3>
       <form method="post" action="./data.php">
 
         <div class="form-group">
           <label for="voornaamId">voornaam:</label>
-          <input type="text" name="voornaam" id="voornaamId" class="form-control">
+          <input type="text" name="voornaam" id="voornaamId" class="form-control" value="<?php echo $record["voornaam"]; ?>">
         </div>
-
         <div class="form-group">
           <label for="tussenvoegselId">tussenvoegsel:</label>
-          <input type="text" name="tussenvoegsel" id="tussenvoegselId" class="form-control">          
+          <input type="text" name="tussenvoegsel" id="tussenvoegselId" class="form-control" value="<?php echo $record["tussenvoegsel"]; ?>" required>          
         </div>
-
-
-        achternaam: <input type="text" name="achternaam"><br>
-        leeftijd: <input type="number" name="leeftijd" min="18" max="123"><br>
-        wachtwoord: <input type="password" name="wachtwoord"><br>
-        Haarkleur: <select name="haarkleur"><br>
-                      <option value="bruin">bruin haar</option>
-                      <option value="blond">blond haar</option>
-                  </select><br>
-        <input type="submit" value="Drukken maar!"><br>
+        <div class="form-group">
+          <label for="achternaamId">achternaam: </label>
+          <input type="text" name="achternaam" id="achternaamId" class="form-control" value="<?php echo $record["achternaam"]; ?>">          
+        </div>
+        <div class="form-group">
+          <label for="leeftijdId">leeftijd: </label>
+          <input type="number" name="leeftijd" min="18" max="123" id="leeftijdId" class="form-control" value="<?php echo $record["leeftijd"]; ?>">          
+        </div>
+        <div class="form-group">
+          <label for="schoenmaatId">schoenmaat: </label>
+          <input type="number" name="schoenmaat" id="schoenmaatId" class="form-control" value="<?php echo $record["schoenmaat"]; ?>">          
+        </div>
+        <div class="form-group">
+          <label for="haarkleurId">Haarkleur: </label>
+          <select name="haarkleur" class="form-control custom-select" id="haarkleurId"><br>
+            <option value="bruin"> >bruin haar</option>
+            <option value="blond"> >blond haar</option>
+          </select>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Drukken maar!</button>
       </form>
     </div>
 

@@ -74,6 +74,7 @@
       // echo "De straat waar ik woon: " . $user1["straatnaam"] . " " . $user1["huisnummer"] ."<br>";
     ?>
 
+
     <?php
       $server_name = "localhost";
       $user_name = "root";
@@ -110,8 +111,9 @@
                                               <td>" . $records["tussenvoegsel"] . "</td>
                                               <td>" . $records["achternaam"] . "</td>
                                               <td>" . $records["leeftijd"] . "</td>
+                                              <td>" . $records["schoenmaat"] . "</td>
                                               <td>
-                                                <a href='./update.php'>
+                                                <a href='./update.php?id=" . $records["id"] . "'>
                                                   <img src='./img/edit.png' alt='potlood-wijzig-record'>
                                                 </a>
                                               </td>
@@ -133,6 +135,7 @@
       tussenvoegsel: <input type="text" name="tussenvoegsel"><br>
       achternaam: <input type="text" name="achternaam"><br>
       leeftijd: <input type="number" name="leeftijd" min="18" max="123"><br>
+      schoenmaat: <input type="number" name="schoenmaat" min="26" max="48"><br>
       wachtwoord: <input type="password" name="wachtwoord"><br>
       Haarkleur: <select name="haarkleur"><br>
                     <option value="bruin">bruin haar</option>
@@ -151,6 +154,7 @@
           <th>tussenvoegsel</th>
           <th>Achternaam</th>
           <th>Leeftijd</th>
+          <th>schoenmaat</th>
           <th></th>
           <th></th>
         </tr> 
