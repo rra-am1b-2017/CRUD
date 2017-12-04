@@ -118,7 +118,7 @@
                                                 </a>
                                               </td>
                                               <td>
-                                                <a href=''>
+                                                <a href='./delete.php?id={$records["id"]}'>
                                                   <img src='./img/drop.png' alt='kruis-delete-record'>
                                                 </a>
                                               </td>
