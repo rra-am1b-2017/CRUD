@@ -38,8 +38,8 @@
     
   <div class="container">
     <h3>Wijzig hieronder je gegevens:</h3>
-      <form method="post" action="./data.php">
-
+      <form method="post" action="./update_data.php">
+        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
         <div class="form-group">
           <label for="voornaamId">voornaam:</label>
           <input type="text" name="voornaam" id="voornaamId" class="form-control" value="<?php echo $record["voornaam"]; ?>">
@@ -63,8 +63,8 @@
         <div class="form-group">
           <label for="haarkleurId">Haarkleur: </label>
           <select name="haarkleur" class="form-control custom-select" id="haarkleurId"><br>
-            <option value="bruin"> >bruin haar</option>
-            <option value="blond"> >blond haar</option>
+            <option value="bruin">bruin haar</option>
+            <option value="blond">blond haar</option>
           </select>
         </div>
         <br>
