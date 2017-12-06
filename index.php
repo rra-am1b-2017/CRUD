@@ -131,20 +131,36 @@
 
     <h3>Vul hieronder je gegevens in:</h3>
     <form method="post" action="./data.php">
-      voornaam: <input type="text" name="voornaam"><br>
-      tussenvoegsel: <input type="text" name="tussenvoegsel"><br>
-      achternaam: <input type="text" name="achternaam"><br>
-      leeftijd: <input type="number" name="leeftijd" min="18" max="123"><br>
-      schoenmaat: <input type="number" name="schoenmaat" min="26" max="48"><br>
-      wachtwoord: <input type="password" name="wachtwoord"><br>
-      Haarkleur: <select name="haarkleur"><br>
-                    <option value="bruin">bruin haar</option>
-                    <option value="blond">blond haar</option>
-                 </select><br>
-      <input type="submit" value="Drukken maar!"><br>
-    </form>
+        <div class="form-group">
+          <label for="voornaamId">voornaam:</label>
+          <input type="text" name="voornaam" id="voornaamId" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="tussenvoegselId">tussenvoegsel:</label>
+          <input type="text" name="tussenvoegsel" id="tussenvoegselId" class="form-control" required>          
+        </div>
+        <div class="form-group">
+          <label for="achternaamId">achternaam:</label>
+          <input type="text" name="achternaam" id="achternaamId" class="form-control">          
+        </div>
+        <div class="form-group">
+          <label for="leeftijdId">leeftijd:</label>
+          <input type="number" name="leeftijd" min="18" max="123" id="leeftijdId" class="form-control">          
+        </div>
+        <div class="form-group">
+          <label for="schoenmaatId">schoenmaat:</label>
+          <input type="number" name="schoenmaat" id="schoenmaatId" class="form-control">          
+        </div>
+        <div class="form-group">
+          <label for="haarkleurId">Haarkleur:</label>
+          <select name="haarkleur" class="form-control custom-select" id="haarkleurId">
+            <option value="bruin">bruin haar</option>
+            <option value="blond">blond haar</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Drukken maar!</button>
+      </form>
 
-    <hr>
 
     <table class="table table-hover">
       <thead>
