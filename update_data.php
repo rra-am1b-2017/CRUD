@@ -1,12 +1,6 @@
 <?php
-  $server_name = "localhost";
-  $user_name = "root";
-  $password = "";
-  $database_name = "am1b_2017_blok2_crud";
-
-  // Met myqli_connect maken we contact met onze mysql-server.
-  $conn = mysqli_connect($server_name, $user_name, $password, $database_name);
-
+  // Maak contact met de mysql-server
+  include("./connect_db.php");
     
   $sql = "UPDATE `users` SET `voornaam`      = '{$_POST["voornaam"]}',
                             `tussenvoegsel`  = '{$_POST["tussenvoegsel"]}',

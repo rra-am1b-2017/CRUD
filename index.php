@@ -76,14 +76,9 @@
 
 
     <?php
-      $server_name = "localhost";
-      $user_name = "root";
-      $password = "";
-      $database_name = "am1b_2017_blok2_crud";
-    
-      // Met myqli_connect maken we contact met onze mysql-server.
-      $conn = mysqli_connect($server_name, $user_name, $password, $database_name);
-
+      // We gaan een verbinding opzetten met de mysql-server
+      include("./connect_db.php");
+      
       // Met deze query selecteren we de records uit de tabel users
       $sql = "SELECT * FROM `users`";
     
