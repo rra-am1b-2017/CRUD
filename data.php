@@ -3,11 +3,11 @@
   include("./connect_db.php");
   include("./functions/function.php");
 
-  var_dump($_POST);
+  //var_dump($_POST);
   // functie implode php functie
   // https://www.w3schools.com/php/func_string_implode.asp
   
-  exit();
+  //exit();
 
   // We maken de $_POST-variabelen schoon door ze door de sanitize function te halen
   $voornaam       = sanitize($_POST['voornaam']);

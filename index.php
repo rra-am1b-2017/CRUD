@@ -154,8 +154,8 @@
           </select>
         </div>
 
-        <input type="checkbox" name="options[]" value="lichtmetaal">Lichtmetaal<br>
-        <input type="checkbox" name="options[]" value="carbon">Carbon<br>
+        <!-- <input type="checkbox" name="options[]" value="lichtmetaal">Lichtmetaal<br> -->
+        <!-- <input type="checkbox" name="options[]" value="carbon">Carbon<br> -->
 
 
         <button type="submit" class="btn btn-primary">Drukken maar!</button>
