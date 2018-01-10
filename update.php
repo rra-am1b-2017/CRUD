@@ -1,6 +1,6 @@
 <?php
-  //echo "Het meegegeven id=" . $_GET["id"];
-
+  // Check of $_GET["id"] wel een getal is en geen string van een sql-injection
+  if (is_numeric($_GET["id"])) {
   // Maak contact met database
   include("./connect_db.php");
 
@@ -10,11 +10,13 @@
   // We vuren de query af op de database en krijgen het resultaat van deze select query terug
   $result = mysqli_query($conn, $sql);
 
-  //var_dump($result);
   // Maak van $result een assiatief array zodat we het kunnen gebruiken in de code
   $record = mysqli_fetch_assoc($result);
 
-  //var_dump($record);
+  } else {
+    // Wanneer $_GET["id"] toch een string is dan terugsturen naar index.php    
+    header("Location: ./index.php");
+  }
 ?>
 
 <!doctype html>

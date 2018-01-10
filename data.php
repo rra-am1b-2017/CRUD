@@ -3,6 +3,12 @@
   include("./connect_db.php");
   include("./functions/function.php");
 
+  var_dump($_POST);
+  // functie implode php functie
+  // https://www.w3schools.com/php/func_string_implode.asp
+  
+  exit();
+
   // We maken de $_POST-variabelen schoon door ze door de sanitize function te halen
   $voornaam       = sanitize($_POST['voornaam']);
   $tussenvoegsel  = sanitize($_POST['tussenvoegsel']);
@@ -25,7 +31,7 @@
                                 '$schoenmaat')";
 
   // echo $sql; exit();
-  echo "De gegevens zijn goed weggeschreven naar de database";
+  // echo "De gegevens zijn goed weggeschreven naar de database";
 
   mysqli_query($conn, $sql);
 

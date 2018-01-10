@@ -1,13 +1,21 @@
 <?php
   // Maak contact met de mysql-server
   include("./connect_db.php");
+  include("./functions/function.php");
+
+  $voornaam       = sanitize($_POST["voornaam"]);
+  $tussenvoegsel  = sanitize($_POST["tussenvoegsel"]);
+  $achternaam     = sanitize($_POST["achternaam"]);
+  $leeftijd       = sanitize($_POST["leeftijd"]);
+  $schoenmaat     = sanitize($_POST["schoenmaat"]);
+  $id             = sanitize($_POST["id"]);
     
-  $sql = "UPDATE `users` SET `voornaam`      = '{$_POST["voornaam"]}',
-                            `tussenvoegsel`  = '{$_POST["tussenvoegsel"]}',
-                            `achternaam`     = '{$_POST["achternaam"]}',
-                            `leeftijd`       = '{$_POST["leeftijd"]}',
-                            `schoenmaat`     = '{$_POST["schoenmaat"]}'
-                      WHERE `id`             =  {$_POST["id"]};";
+  $sql = "UPDATE `users` SET `voornaam`      = '{$voornaam}',
+                            `tussenvoegsel`  = '{$tussenvoegsel}',
+                            `achternaam`     = '{$achternaam}',
+                            `leeftijd`       = '{$leeftijd}',
+                            `schoenmaat`     = '{$schoenmaat}'
+                      WHERE `id`             =  {$id}";
 
   //echo $sql;
   //echo "De gegevens zijn goed geupdate naar de database";exit();
